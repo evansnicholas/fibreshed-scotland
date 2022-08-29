@@ -5,7 +5,7 @@ image: /img/fibreshed/flax_close_up.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
-  title: Why Kaldi
+  title: Building a regenerative textile economy in Scotland.
   description: >
     Kaldi is the coffee store for everyone who believes that great coffee
     shouldn't just taste good, it should do good too. We source all of our beans
@@ -21,20 +21,20 @@ intro:
     - image: /img/fibreshed/flax_close_up.jpg
       text: >
         This is fibreshed scotland.
-    - image: /img/coffee-gear.png
+    - image: /img/fibreshed/flax_close_up.jpg
       text: >
         We offer a small, but carefully curated selection of brewing gear and
         tools for every taste and experience level. No matter if you roast your
         own beans or just bought your first french press, you’ll find a gadget
         to fall in love with in our shop.
-    - image: /img/tutorials.png
+    - image: /img/fibreshed/flax_close_up.jpg
       text: >
         Love a great cup of coffee, but never knew how to make one? Bought a
         fancy new Chemex but have no clue how to use it? Don't worry, we’re here
         to help. You can schedule a custom 1-on-1 consultation with our baristas
         to learn anything you want to know about coffee roasting and brewing.
         Email us or call the store for details.
-    - image: /img/meeting-space.png
+    - image: /img/fibreshed/flax_close_up.jpg
       text: >
         We believe that good coffee has the power to bring people together.
         That’s why we decided to turn a corner of our shop into a cozy meeting
@@ -56,11 +56,11 @@ main:
     optimal for the plants, farmers and the local environment.
   image1:
     alt: A close-up of a paper filter filled with ground coffee
-    image: /img/products-grid3.jpg
+    image: /img/fibreshed/flax_close_up.jpg
   image2:
     alt: A green cup of a coffee on a wooden table
-    image: /img/products-grid2.jpg
+    image: /img/fibreshed/flax_close_up.jpg
   image3:
     alt: Coffee beans
-    image: /img/products-grid1.jpg
+    image: /img/fibreshed/flax_close_up.jpg
 ---

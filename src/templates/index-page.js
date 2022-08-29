@@ -20,22 +20,31 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <section className="section section--gradient">
+      <section className="section section--gradient fibreshed-first-section">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-8">
+              <h1 className="has-text-white is-size-1-tablet is-size-3">
+                <span className="fibreshed-title has-text-weight-bold">{mainpitch.title}</span>
+              </h1>
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column is-half">
+              <GatsbyImage
+                image={intro.blurbs[0].image.childImageSharp.gatsbyImageData}
+                />
+            </div>
+          </div>
+        </div>
         <div className="container">
           <div className="section">
+            <div className="container">
+            </div>
+            
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <div className="content">
-                  <div className="columns">
-                    <div class="column is-half">
-                      <GatsbyImage
-                        image={intro.blurbs[0].image.childImageSharp.gatsbyImageData}
-                        />
-                    </div>
-                    <div class="column">
-                    Second column
-                    </div>
-                  </div>
                   <div className="content">
                     <div className="tile">
                       <h1 className="title">{mainpitch.title}</h1>
@@ -106,7 +115,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
-      />
+        />
     </Layout>
   );
 };
@@ -128,7 +137,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         heading
