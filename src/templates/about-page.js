@@ -9,20 +9,32 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
+    <div>
+      <h1
+        className="has-text-weight-bold is-size-1"
+        style={{
+          boxShadow: "0.5rem 0 0 #f40, -0.5rem 0 0 #f40",
+          backgroundColor: "#e7e3de",
+          color: "white",
+          padding: "1rem",
+        }}
+        >
+        {title}
+      </h1>
+      <section className="section section--gradient">
+
+        <div className="container">
+
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="section">
+                <PageContent className="content" content={content} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
@@ -41,7 +53,7 @@ const AboutPage = ({ data }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
-      />
+        />
     </Layout>
   );
 };

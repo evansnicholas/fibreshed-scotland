@@ -47,11 +47,11 @@ const Navbar = () => {
               Blog
             </Link>
             </li>
-            <li className="navbar-item" style={{padding: "0px"}}>
+            {/*<li className="navbar-item" style={{padding: "0px"}}>
             <Link className="navbar-item" to="/contact">
               Contact
             </Link>
-            </li>
+            </li>*/}
         </ul>
       </div>
     </nav>
