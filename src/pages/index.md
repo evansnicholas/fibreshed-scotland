@@ -1,16 +1,17 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
-image: /img/fibreshed/flax_close_up.jpg
-heading: Great coffee with a conscience
+title: Fibreshed Scotland
+image: /img/fibreshed/woven_wool_fibreshed_scot.jpg
+heading: Fibreshed Scotland
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
-  title: Building a regenerative textile economy in Scotland.
+  title: Uniting producers, makers and artisans to build a regenerative textile economy in Scotland.
   description: >
-    Coming soon...
+    Fibreshed Scotland is a growing community of producers, makers, consumers, 
+    and educators who work with and promote locally produced wool, linen, leather and natural dye products.
 intro:
   blurbs:
+    - image: /img/fibreshed/flax_bloom_fibreshed_scot.jpg
     - image: /img/fibreshed/flax_close_up.jpg
-      text: >
-        This is fibreshed scotland.
+    - image: /img/fibreshed/Soil to Soil.jpeg
 ---

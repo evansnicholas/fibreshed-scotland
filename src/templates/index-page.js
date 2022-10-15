@@ -23,20 +23,45 @@ export const IndexPageTemplate = ({
       <section className="section section--gradient fibreshed-first-section">
         <div className="container">
           <div className="columns">
-            <div className="column is-8">
-              <h1 className="has-text-white is-size-1-tablet is-size-3">
-                <span className="fibreshed-title has-text-weight-bold">{mainpitch.title}</span>
-              </h1>
+            <div className="column is-half">
+              <GatsbyImage
+                image={image.childImageSharp.gatsbyImageData}
+                />
+            </div>
+            <div className="column is-half">
+              <div className="is-size-3 is-underlined pb-2">{title}</div>
+              <div className="is-size-1-tablet is-size-3">
+                {mainpitch.title}
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="section section--gradient fibreshed-second-section">
+        <div className="is-size-4 has-text-weight-bold has-text-centered">
+          {mainpitch.description}
+        </div>
+      </section>
+      <section className="section section--gradient fibreshed-first-section">
+        <div className="container">
           <div className="columns">
             <div className="column is-half">
               <GatsbyImage
                 image={intro.blurbs[0].image.childImageSharp.gatsbyImageData}
                 />
             </div>
+            <div className="column is-half">
+              <GatsbyImage
+                image={intro.blurbs[1].image.childImageSharp.gatsbyImageData}
+                />
+            </div>
           </div>
         </div>
+      </section>
+      <section className="section section--gradient fibreshed-second-section">
+        <GatsbyImage
+          image={intro.blurbs[2].image.childImageSharp.gatsbyImageData}
+          />
       </section>
     </div>
   );
