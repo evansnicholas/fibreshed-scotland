@@ -3,7 +3,7 @@ templateKey: index-page
 title: Fibreshed Scotland
 image: /img/fibreshed/woven_wool_fibreshed_scot.jpg
 heading: Fibreshed Scotland
-subheading: Support sustainable farming while enjoying a cup
+subheading: Support sustainable farming
 mainpitch:
   title: Uniting producers, makers and artisans to build a regenerative textile economy in Scotland.
   description: >

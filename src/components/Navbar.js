@@ -38,13 +38,18 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="navbar-item" style={{padding: "0px"}}>
-            <Link className="navbar-item" to="/members">
-              Members
+            <Link className="navbar-item" to="/map">
+              Map
             </Link>
             </li>
             <li className="navbar-item" style={{padding: "0px"}}>
-            <Link className="navbar-item" to="/blog">
-              Blog
+            <Link className="navbar-item" to="/directory">
+              Directory
+            </Link>
+            </li>
+            <li className="navbar-item" style={{padding: "0px"}}>
+            <Link className="navbar-item" to="/events">
+              Events
             </Link>
             </li>
             {/*<li className="navbar-item" style={{padding: "0px"}}>
