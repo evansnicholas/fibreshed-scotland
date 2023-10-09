@@ -19,7 +19,7 @@ export const IndexPageTemplate = ({
 }) => {
 
   return (
-    <div>
+    <div className="fibreshed-index">
       <section className="section section--gradient fibreshed-first-section">
         <div className="container">
           <div className="columns">
@@ -43,19 +43,13 @@ export const IndexPageTemplate = ({
         </div>
       </section>
       <section className="section section--gradient fibreshed-first-section">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-half">
-              <GatsbyImage
-                image={intro.blurbs[0].image.childImageSharp.gatsbyImageData}
-                />
-            </div>
-            <div className="column is-half">
-              <GatsbyImage
-                image={intro.blurbs[1].image.childImageSharp.gatsbyImageData}
-                />
-            </div>
-          </div>
+        <div className="subtitle is-1 has-text-centered is-underlined is-size-1-tablet is-size-3 ">
+          <Link to="/blog">
+              News
+          </Link>
+        </div>
+        <div> 
+          <BlogRoll limit="3" />
         </div>
       </section>
       <section className="section section--gradient fibreshed-second-section">

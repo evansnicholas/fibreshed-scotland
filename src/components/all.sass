@@ -5,13 +5,17 @@
 $kaldi-red: #D64000
 $kaldi-red-invert: #fff
 
-$primary: $kaldi-red
+//Fibreshed brand colours
+$fibreshed-grey: #4d4d4f
+$fibreshed-light-grey: #e7e3de
+
+$primary: $fibreshed-grey
 $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
 
 // Customized VARS for Fibreshed
-$navbar-background-color: #e7e3de
+$navbar-background-color: $fibreshed-light-grey
 $navbar-height: 6rem
 $navbar-item-img-max-height: 4rem
 
@@ -118,8 +122,8 @@ $menu-label-color: $white-ter
     display: inline
 
 // blog roll
-.blog-list-item.is-featured
-  background-color: #d6400033
+.blog-list-item
+  background-color: $fibreshed-light-grey
 .blog-list-item header
   display: flex
   margin-bottom: 1em
@@ -161,4 +165,15 @@ body
   background: #005EB8
   color: white
 
+.fibreshed-page-title
+  color: $primary
+
+.fibreshed-index
+  a
+    color: black
+  .blog-list-item
+    background-color: $white
+
+.blog-list-item
+   background-color: $fibreshed-light-grey
 
