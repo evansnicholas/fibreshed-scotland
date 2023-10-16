@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
@@ -14,6 +15,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  imageInfo
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -26,20 +28,23 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+            <div className="as-text-weight-medium is-size-4-desktop">
+              <p>{description}</p>
+              <p><PreviewCompatibleImage imageInfo={imageInfo} /></p>
+              <PostContent content={content} />
+              {tags && tags.length ? (
+                <div style={{ marginTop: `4rem` }}>
+                  <h4>Tags</h4>
+                  <ul className="taglist">
+                    {tags.map((tag) => (
+                      <li key={tag + `tag`}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
@@ -75,6 +80,16 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        imageInfo={{
+                      image: post.frontmatter.featuredimage,
+                      alt: `featured image for post ${post.frontmatter.title}`,
+                      width:
+                        post.frontmatter.featuredimage.childImageSharp
+                          .gatsbyImageData.width,
+                      height:
+                        post.frontmatter.featuredimage.childImageSharp
+                          .gatsbyImageData.height,
+                    }}
       />
     </Layout>
   );
@@ -98,6 +113,14 @@ export const pageQuery = graphql`
         title
         description
         tags
+        featuredimage {
+          childImageSharp {
+            gatsbyImageData(
+              quality: 100
+              layout: FULL_WIDTH
+            )
+          }
+        }
       }
     }
   }
