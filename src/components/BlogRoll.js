@@ -5,55 +5,56 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 
 const BlogRollTemplate = (props) => {
-  
-  const { edges: posts } = props.data.allMarkdownRemark;
+
+  let { edges: posts } = props.data.allMarkdownRemark;
+  console.log(props);
+  if (props.limit) {
+    posts = posts.slice(0, Number(props.limit));
+  };
 
   return (
     <div className="columns is-multiline">
       {posts &&
         posts.map(({ node: post }) => (
-          <div className="is-parent column is-6" key={post.id}>
+          <div className="is-parent column is-4" key={post.id}>
             <article
-              className={`blog-list-item tile is-child box notification ${
-                post.frontmatter.featuredpost ? 'is-featured' : ''
-              }`}
+              className={`content blog-list-item tile is-child box ${post.frontmatter.featuredpost ? 'is-featured' : ''
+                }`}
             >
-              <header>
-                {post?.frontmatter?.featuredimage && (
-                  <div className="featured-thumbnail">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        width:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.width,
-                        height:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.height,
-                      }}
-                    />
-                  </div>
-                ) }
-                <p className="post-meta">
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={post.fields.slug}
-                  >
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
-                  </span>
-                </p>
-              </header>
+              <p className="post-meta">
+                <Link
+                  className="title has-text-primary is-size-4"
+                  to={post.fields.slug}
+                >
+                  {post.frontmatter.title}
+                </Link>
+                <span></span>
+                <span className="subtitle is-size-5 is-block">
+                  {post.frontmatter.date}
+                </span>
+              </p>
               <p>
-                {post.excerpt}
+                {post?.frontmatter?.featuredimage && (
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: post.frontmatter.featuredimage,
+                      alt: `featured image for post ${post.frontmatter.title}`,
+                      width:
+                        post.frontmatter.featuredimage.childImageSharp
+                          .gatsbyImageData.width,
+                      height:
+                        post.frontmatter.featuredimage.childImageSharp
+                          .gatsbyImageData.height,
+                    }}
+                  />
+                )}
+              </p>
+              <p>
+                {post.frontmatter?.description}
                 <br />
                 <br />
                 <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
+                  Read more →
                 </Link>
               </p>
             </article>
@@ -69,10 +70,11 @@ BlogRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
+  limit: PropTypes.number
 }
 
 
-export default function BlogRoll() {
+export default function BlogRoll(props) {
   return (
     <StaticQuery
       query={graphql`
@@ -90,17 +92,16 @@ export default function BlogRoll() {
                 }
                 frontmatter {
                   title
+                  description
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
                   featuredpost
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 120
                         quality: 100
-                        layout: CONSTRAINED
+                        layout: FULL_WIDTH
                       )
-
                     }
                   }
                 }
@@ -109,7 +110,7 @@ export default function BlogRoll() {
           }
         }
       `}
-      render={(data, count) => <BlogRollTemplate data={data} count={count} />}
+      render={(data, count, limit) => <BlogRollTemplate data={data} count={count} limit={props.limit} />}
     />
   );
 }

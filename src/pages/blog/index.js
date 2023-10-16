@@ -9,15 +9,14 @@ export default class BlogIndexPage extends React.Component {
       <Layout>
         <div>
           <h1
-            className="has-text-weight-bold is-size-1"
+            className="has-text-weight-bold is-size-1 fibreshed-page-title"
             style={{
               boxShadow: "0.5rem 0 0 #f40, -0.5rem 0 0 #f40",
               backgroundColor: "#e7e3de",
-              color: "white",
               padding: "1rem",
             }}
           >
-            Latest Stories
+            News
           </h1>
         </div>
         <section className="section">
