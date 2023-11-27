@@ -40,4 +40,4 @@ Here’s some examples of what people said:
 
 It felt like that promise is a real gift to us all, and takes us neatly on to the final Conversation of this cycle which is about the gifts we bring to the world. **The Conversations will be on Wednesday 29th (7pm) and Thursday 30th (1pm)**.  You’re very welcome to join, whether or not you’ve been along before or missed a session or two along the way. 
 
-** and a **SAVE THE DATE**  for **Thursday 7th December 11.30am -1.30pm  **- this will be a **‘NEXT STEPS’** meeting from these conversations - wrapping up what we’ve talked about and unfolding some practical actions from what we’ve been discussing. More details to follow by email. 
+** and a **SAVE THE DATE** for **Thursday 7th December 11.30am -1.30pm** - this will be a **‘NEXT STEPS’** meeting from these conversations - wrapping up what we’ve talked about and unfolding some practical actions from what we’ve been discussing. More details to follow by email. 
