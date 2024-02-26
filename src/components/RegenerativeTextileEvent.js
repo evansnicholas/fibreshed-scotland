@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DateTime } from "luxon";
-import { HTMLContent } from "../../components/Content";
+import { HTMLContent } from "./Content";
 
 function formatDateTime(dateTime) {
     return DateTime.fromISO(dateTime).toLocaleString(DateTime.DATETIME_FULL);

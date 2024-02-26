@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import RegenerativeTextileEvent from "./RegenerativeTextileEvent";
+import RegenerativeTextileEvent from "../../components/RegenerativeTextileEvent";
 
 import Layout from "../../components/Layout";
 
