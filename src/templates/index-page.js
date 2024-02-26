@@ -38,8 +38,11 @@ export const IndexPageTemplate = ({
         </div>
       </section>
       <section className="section section--gradient fibreshed-second-section">
-        <div className="is-size-4 has-text-weight-bold has-text-centered">
+        <div className="is-size-4 has-text-weight-bold has-text-centered pb-2">
           {mainpitch.description}
+        </div>
+        <div className="is-size-4 has-text-weight-bold has-text-centered">
+          Do you want to get more involved? Connect with us though this <Link className="is-underlined" to="https://forms.gle/UXJJkjoyZMJ9J3Zg7">form</Link>.
         </div>
       </section>
       <section className="section section--gradient fibreshed-first-section">

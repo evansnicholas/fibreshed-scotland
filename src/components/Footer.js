@@ -58,7 +58,7 @@ const Footer = () => {
                       />
                   </a>
                 </div>
-
+                <div><Link className="is-underlined has-text-white-ter" to="https://forms.gle/UXJJkjoyZMJ9J3Zg7">Join our mailing list.</Link></div>
               </section>
             </div>
           </div>
