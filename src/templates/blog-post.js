@@ -30,7 +30,9 @@ export const BlogPostTemplate = ({
             </h1>
             <div className="as-text-weight-medium is-size-4-desktop">
               <p>{description}</p>
-              <PreviewCompatibleImage imageInfo={imageInfo} />
+              <div className="column is-8 is-offset-2">
+                <PreviewCompatibleImage imageInfo={imageInfo} />
+              </div>
               <PostContent content={content} />
               {tags && tags.length ? (
                 <div style={{ marginTop: `4rem` }}>
