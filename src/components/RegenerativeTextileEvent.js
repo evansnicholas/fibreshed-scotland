@@ -1,28 +1,22 @@
 import * as React from "react";
-import { DateTime } from "luxon";
 import { HTMLContent } from "./Content";
-
-function formatDate(date) {
-    if (date.dateTime) {
-      return DateTime.fromISO(date.dateTime).toLocaleString(DateTime.DATETIME_FULL);
-    }
-    return DateTime.fromISO(date.date).toLocaleString(DateTime.DATE_FULL);
-}
+import { formatDate } from "../domain/EventUtils";
 
 export default function RegenerativeTextileEvent({ data }) {
   const formattedStartDate = formatDate(data.start);
   const formattedEndDate = formatDate(data.end);
   return (
-    <div className="card mb-2">
-      <div class="card-content">
-        <div class="content">
-          <h2 className="has-text-weight-bold mb-0">{data.summary}</h2>
-          <p>{formattedStartDate} - {formattedEndDate}</p>
-          <p>
-            <HTMLContent content={data.description} />
-          </p>
+    <td>
+      <div className="content">
+        <h3 className="has-text-weight-bold mb-0">{data.summary}</h3>
+        <p className="mb-0">
+          {formattedStartDate} - {formattedEndDate}
+        </p>
+        {data.location ? <p className="mb-0">{data.location}</p> : null}
+        <div>
+          <HTMLContent content={data.description} />
         </div>
       </div>
-    </div>
+    </td>
   );
 }

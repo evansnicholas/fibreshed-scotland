@@ -2,6 +2,7 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import RegenerativeTextileEvent from "../../components/RegenerativeTextileEvent";
+import { groupByYearAndDate, formatMonth } from "../../domain/EventUtils";
 
 import Layout from "../../components/Layout";
 
@@ -32,7 +33,36 @@ export default function EventsPage() {
   if (events && events.length === 0) {
     eventsRender = <div>No events.</div>;
   } else if (events) {
-    const renderedEvents = events.map((e, idx) => <RegenerativeTextileEvent data={e} key={`regenevent:${idx}`}></RegenerativeTextileEvent>);
+    const byYearAndDate = groupByYearAndDate(events);
+    const renderedEvents = Object.keys(byYearAndDate).map((year) => {
+      const yearEvents = byYearAndDate[year];
+      const yearRender = Object.keys(yearEvents).map((month) => {
+        const monthEvents = yearEvents[month];
+        const renderedMonthEvents = monthEvents.map((e, idx) => {
+          return (
+            <tr key={`regenevent:${idx}`}>
+              <RegenerativeTextileEvent 
+                data={e} />
+            </tr>);
+          });
+        return (
+          <div 
+            className="mb-4"
+            key={`regenevent:year-${year}-month-${month}}`}>
+             <h3 className="is-underlined">{formatMonth(month)}</h3>
+             <table className="table">
+              <tbody>{renderedMonthEvents}</tbody>
+            </table> 
+          </div>
+        );
+      });
+      return (
+        <div key={`regenevent:year-${year}}`}>
+          <h2>{year}</h2>
+          {yearRender}
+        </div>
+      );
+    });
     eventsRender = 
       <div>
         <h2>Upcoming Regenerative Textile Events</h2>
